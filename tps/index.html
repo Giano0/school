@@ -1,12 +1,32 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>
-      ciao
-    </title>
-  </head>
-  <body>
-    <h1>
-      ciao
-    </h1>
-  </body>
+	<head>
+		<title>ultimo file</title>
+		<script>
+		function stampa(){
+			var nome=document.getElementById("nome").value;
+			var cognome=document.getElementById("cognome").value;
+			var classe=document.getElementById("classe").value;
+			document.getElementById("print").innerHTML=nome+" "+cognome+", "+classe;
+		}
+
+		</script>
+	</head>
+	<body>
+		<table>
+			<td>
+				<tr>
+					<p>nome</p>
+					<input type="text" id="nome">
+					<p>cognome</p>
+					<input type="text" id="cognome">
+					<p>classe</p>
+					<input type="text" id="classe"><br><br>
+					<input type="button" value="ok" onclick="stampa()"><br><br>
+				</tr>
+				<tr><p id="print"></p></tr>
+			</td>
+
+
+	</body>
 </html>
