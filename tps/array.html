@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>esercizio array</title>
+    </head>
+    <body>
+        <input type="button" value="stampa numeri" onclick="numeri()"><br>
+        <table>
+            <tr id="minmax"></tr>
+            <tr id="print"></tr>
+            <tr id="magg"></tr>
+        </table>
+        <script>
+            function numeri(){
+                var numeri = [];
+                document.getElementById("print").innerHTML=""
+                for (let i = 0; i < 100; i++) {
+                    numeri.push(Math.floor(Math.random()*201)-100);
+                }
+                for (let i = 0; i < 100; i++) {
+                    document.getElementById("print").innerHTML+="<td>"+ numeri[i] +"</td>";
+                }
+                var min = 101;
+                var max = -101;
+                for (let i = 0; i < 100; i++) {
+                    if(numeri[i]>max){
+                        max=numeri[i];
+                    }
+                    if(numeri[i]<min){
+                        min=numeri[i];
+                    }
+                }
+                document.getElementById("minmax").innerHTML="min: "+min+" max: "+max;
+                var magg = [];
+                for (let i = 0; i < 100; i++) {
+                    if(numeri[i]>50){
+                        magg.push(numeri[i]);
+                    }
+                }
+                for (let i = 0; i < magg.length; i++) {
+                    document.getElementById("magg").innerHTML+="<td>"+ magg[i] +"</td>";
+                }
+            }
+        </script>
+    </body>
+</html>
