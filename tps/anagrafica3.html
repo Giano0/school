@@ -83,7 +83,23 @@
           <label for="vehicle2"> Ho un auto</label><br>
           <input type="checkbox" id="box3" name="cavallo" value="cavallo" onclick="aggiungiveicoli(document.getElementById('box3').value);">
           <label for="vehicle3"> Ho un cavallo</label><br>
-          
+
+          <select id="prov">
+
+            <option value="0">Select</option>
+            <option value="1">Milano</option>
+            <option value="2">Como</option>
+            <option value="2">Varese</option>
+            <option value="2">Mantova</option>
+
+        </select><br>
+        
+        <select name=materiaP multiple="multiple" style="height:100px">
+          <option value="matematica">matematica</option>
+          <option value="tps">tps</option>
+          <option value="informatica">informatica</option>
+          <option value="sistemi">sistemi</option>
+           </select><br><br>
           
           <input type="button" value="ok" onclick="stampa()">
 				</td>
