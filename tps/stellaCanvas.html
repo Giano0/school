@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>stella canvas</title>
+    </head>
+    <body>
+        <canvas id="Canvas" width="700" height="700" style="border: 2px solid #d3d3d3;"></canvas>
+
+        <script>
+            let c = document.getElementById("Canvas");
+            let ctx = c.getContext("2d");
+
+            ctx.beginPath();
+            ctx.arc(350,350,250,0,2*Math.PI);
+            ctx.stroke();
+
+            ctx.moveTo(350, 100);
+            ctx.lineTo(203,552);
+            ctx.lineTo(588,273);
+            ctx.lineTo(112,273);
+            ctx.lineTo(497,552);
+            ctx.lineTo(350,100);
+
+            ctx.stroke();
+        </script>
+    </body>
+</html>
