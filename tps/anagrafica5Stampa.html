@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>localStorage</title>
+        <script>
+            function stampa(){
+                let persona = JSON.parse(localStorage.getItem("datiAnagrafici"));
+                let veicoli = localStorage.getItem("veicoli");
+                let output = document.getElementById("stampa");
+                output.appendChild(persona.nome);
+                output.appendChild(persona.cognome);
+                output.appendChild(persona.indirizzo);
+                output.appendChild(persona.citta);
+                output.appendChild(persona.cap);
+                output.appendChild(persona.anno);
+                output.appendChild(persona.generazione);
+                output.appendChild(veicoli);
+            }
+        </script>
+    </head>
+    <body>
+        <div id="stampa"></div>
+        <input type="button" value="leggi dati" onclick="stampa()">
+        <a href="./anagrafica5.html">inserimento dati</a>
+    </body>
+</html>

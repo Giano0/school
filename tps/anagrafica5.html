@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>anagrafica 5 </title>
+		<script>
+            let person = {};
+            
+            let inserimentoVeicoli=[false,false,false];
+            let veicoli = ["bici","auto","cavallo"];
+            function aggiungiveicoli(i){
+                inserimentoVeicoli[i]=!inserimentoVeicoli[i];
+            }
+
+            function salvaDati(){
+                person.nome=document.getElementById("nome").value;
+                person.cognome=document.getElementById("cognome").value;
+                person.indirizzo=document.getElementById("indirizzo").value;
+                person.citta=document.getElementById("citta").value;
+                person.cap=document.getElementById("cap").value;
+                person.anno=document.getElementById("anno").value;
+                person.generazione="";
+
+                switch (true) {
+                    case person.anno>=1946&&person.anno<1964:
+                        person.generazione="baby boomer";
+                        break;
+                    case person.anno>=1964&&person.anno<1980:
+                        person.generazione="generazione x";
+                        break;
+                    case person.anno>=1980&&person.anno<1996:
+                        person.generazione="millenial";
+                        break;
+                    case person.anno>=1996&&person.anno<2012:
+                        person.generazione="generazione z";
+                        break;
+                    case person.anno>=2012:
+                        person.generazione="generazione alpha";
+                        break;
+                    default:
+                        person.generazione="altro";
+                        break;
+                }
+
+                let veicolistampa="";
+                for (let i = 0; i < 3; i++) {
+                    if(inserimentoVeicoli[i]){
+                        veicolistampa+=veicoli[i]+" ";
+                    }
+                }
+                localStorage.setItem("veicoli", veicolistampa);
+                localStorage.setItem("datiAnagrafici", JSON.stringify(person));
+                
+            }
+
+	    </script>
+	</head>
+	<body>
+        <p>nome</p>
+        <input type="text" id="nome">
+
+        <p>cognome</p>
+        <input type="text" id="cognome">
+
+        <p>indirizzo</p>
+        <input type="text" id="indirizzo">
+
+        <p>citta'</p>
+        <input type="text" id="citta">
+
+        <p>cap</p>
+        <input type="text" id="cap">
+
+        <p>anno di nascita</p>
+        <input type="text" id="anno"><br>
+                
+        <p>sesso</p>
+        <input type="radio" name="sesso" value="maschio">maschio</input>
+        <input type="radio" name="sesso" value="femmina">femmina</input>
+        <input type="radio" name="sesso" value="altro">altro</input><br>
+
+        <p>veicolo</p>
+        <input type="checkbox" id="box1" name="bici" value="bici" onclick="aggiungiveicoli(0);">
+        <label for="vehicle1"> Ho una bici</label><br>
+        <input type="checkbox" id="box2" name="auto" value="auto" onclick="aggiungiveicoli(1);">
+        <label for="vehicle2"> Ho un auto</label><br>
+        <input type="checkbox" id="box3" name="cavallo" value="cavallo" onclick="aggiungiveicoli(2);">
+        <label for="vehicle3"> Ho un cavallo</label><br>
+
+        <p>provincia</p>
+        <select id="prov">
+            <option value="0">Select</option>
+            <option value="1">Milano</option>
+            <option value="2">Como</option>
+            <option value="2">Varese</option>
+            <option value="2">Mantova</option>
+        </select><br>
+        
+        <p>materia preferita</p>
+        <select name=materiaP multiple="multiple">
+            <option value="matematica">matematica</option>
+            <option value="tps">tps</option>
+            <option value="informatica">informatica</option>
+            <option value="sistemi">sistemi</option>
+        </select><br><br>
+            
+        <input type="button" value="salva" onclick="salvaDati()">
+        <a href="./anagrafica5Stampa.html">Stampa</a>
+
+	</body>
+</html>
