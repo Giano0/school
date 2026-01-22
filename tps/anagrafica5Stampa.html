@@ -7,14 +7,14 @@
                 let persona = JSON.parse(localStorage.getItem("datiAnagrafici"));
                 let veicoli = localStorage.getItem("veicoli");
                 let output = document.getElementById("stampa");
-                output.appendChild(persona.nome);
-                output.appendChild(persona.cognome);
-                output.appendChild(persona.indirizzo);
-                output.appendChild(persona.citta);
-                output.appendChild(persona.cap);
-                output.appendChild(persona.anno);
-                output.appendChild(persona.generazione);
-                output.appendChild(veicoli);
+                output.innerHTML += persona.nome;
+                output.innerHTML += persona.cognome;
+                output.innerHTML += persona.indirizzo;
+                output.innerHTML += persona.citta;
+                output.innerHTML += persona.cap;
+                output.innerHTML += persona.anno;
+                output.innerHTML += persona.generazione;
+                output.innerHTML += veicoli;
             }
         </script>
     </head>
