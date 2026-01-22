@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>anagrafica 5 stampa</title>
+        <title>localStorage</title>
         <script>
             function stampa(){
                 let persona = JSON.parse(localStorage.getItem("datiAnagrafici"));
                 let veicoli = localStorage.getItem("veicoli");
                 let output = document.getElementById("stampa");
-                output.innerHTML += persona.nome;
-                output.innerHTML += persona.cognome;
-                output.innerHTML += persona.indirizzo;
-                output.innerHTML += persona.citta;
-                output.innerHTML += persona.cap;
-                output.innerHTML += persona.anno;
-                output.innerHTML += persona.generazione;
-                output.innerHTML += veicoli;
+                output.innerHTML += persona.nome + " ";
+                output.innerHTML += persona.cognome + " ";
+                output.innerHTML += persona.indirizzo + " ";
+                output.innerHTML += persona.citta + " ";
+                output.innerHTML += persona.cap + " ";
+                output.innerHTML += persona.anno + " ";
+                output.innerHTML += persona.generazione + " ";
+                output.innerHTML += veicoli + " ";
             }
         </script>
     </head>
@@ -24,4 +24,3 @@
         <a href="./anagrafica5.html">inserimento dati</a>
     </body>
 </html>
-
